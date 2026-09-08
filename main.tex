@@ -1,0 +1,116 @@
+\documentclass[12pt, a4paper]{article}
+
+% ================================================
+% 字型設定（含中英文，字型檔放於 fonts/ 目錄）
+% ================================================
+\usepackage{fontspec}
+\usepackage{xeCJK}
+
+\setCJKmainfont{kaiu.ttf}[
+    Path           = fonts/,
+    AutoFakeBold   = true,
+    AutoFakeSlant  = 0.2
+]
+\setCJKsansfont{kaiu.ttf}[
+    Path           = fonts/,
+    AutoFakeBold   = true
+]
+\setCJKmonofont{kaiu.ttf}[
+    Path           = fonts/
+]
+
+\setmainfont{times.ttf}[
+    Path           = fonts/,
+    BoldFont       = timesbd.ttf,
+    ItalicFont     = timesi.ttf,
+    BoldItalicFont = timesbi.ttf
+]
+
+% ================================================
+% 排版與佈局
+% ================================================
+\usepackage[
+    top    = 1cm,
+    bottom = 2cm,
+    left   = 1cm,
+    right  = 1cm
+]{geometry}
+
+\usepackage{setspace}
+\onehalfspacing              % 1.5 倍行距
+
+\usepackage{indentfirst}     % 中文慣例：每段首行縮排
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.5em}
+
+% ================================================
+% 圖表與表格
+% ================================================
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{float}           % [H] 強制圖表位置
+\usepackage{caption}
+\usepackage{subcaption}      % 子圖 (a)(b)(c)
+\usepackage{booktabs}        % 學術風格三線表
+\usepackage{tabularx}        % 自動延展欄寬表格
+
+% ================================================
+% 數學與單位
+% ================================================
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}         % 數值單位（材料分析必備）
+
+% ================================================
+% 超連結與書籤
+% ================================================
+\usepackage[
+    colorlinks = true,
+    linkcolor  = blue,
+    citecolor  = blue,
+    urlcolor   = blue
+]{hyperref}
+
+% ================================================
+% 參考文獻（biblatex + biber，IEEE 格式）
+% ================================================
+\usepackage[
+    backend = biber,
+    style   = ieee,
+    sorting = none
+]{biblatex}
+\addbibresource{references.bib}
+
+% ================================================
+% 標題資訊
+% ================================================
+\title{
+    {\large 國立成功大學 \quad 材料分析} \\[0.5em]
+    {\LARGE 【論文名稱】} \\[0.3em]
+    {\large Paper Presentation Report}
+}
+\author{
+    作者一 \and 作者二 \and 作者三
+}
+\date{\today}
+
+% ================================================
+% 正文
+% ================================================
+\begin{document}
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\input{sections/01_intro}
+\input{sections/02_method}
+\input{sections/03_experiment}
+\input{sections/04_conclusion}
+
+\newpage
+\printbibliography[heading=bibintoc, title={參考文獻}]
+
+\end{document}

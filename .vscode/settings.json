@@ -1,0 +1,47 @@
+{
+    // ════════════════════════════════════════════════════════════════
+    // LaTeX Workshop 專案設定：確保與終端機 latexmk & CI 編譯完全一致
+    // ════════════════════════════════════════════════════════════════
+
+    // 1. 指定輸出目錄（對應 .latexmkrc 的 $out_dir = 'build'）
+    // 告知 LaTeX Workshop 到 build/ 尋找編譯產生的 PDF 與 SyncTeX
+    "latex-workshop.latex.outDir": "%DIR%/build",
+
+    // 2. 自訂配方：只呼叫 latexmk，讓它完全依循專案根目錄的 .latexmkrc
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk (.latexmkrc)",
+            "tools": [
+                "latexmk"
+            ]
+        }
+    ],
+
+    // 3. 自訂工具：不 hardcode 編譯引擎，交給 .latexmkrc 決定
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {}
+        }
+    ],
+
+    // 4. 多檔案架構保護：無論正在編輯 sections/ 哪一個檔案，一律鎖定 main.tex 為主文件
+    "latex-workshop.latex.rootFile.useSubFile": false,
+    "latex-workshop.latex.search.rootFiles.include": [
+        "main.tex"
+    ],
+
+    // 5. 存檔自動編譯行為（可依個人習慣調整：onSave 或 never）
+    "latex-workshop.latex.autoBuild.run": "onSave",
+
+    // 6. PDF 檢視與 SyncTeX（雙向跳轉）
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.synctex.afterBuild.enabled": true
+}

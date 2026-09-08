@@ -1,2 +1,20 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# LaTeX 原始碼：強制 LF，避免跨平台換行衝突
+*.tex   text eol=lf
+*.bib   text eol=lf
+*.cls   text eol=lf
+*.sty   text eol=lf
+*.md    text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+
+# 二進位檔案：不做換行轉換
+*.pdf   binary
+*.ttf   binary
+*.otf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.eps   binary
