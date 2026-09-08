@@ -1,0 +1,20 @@
+# .gitignore
+
+# ── 編譯暫存目錄（latexmk out_dir）──
+build/
+
+# ── LaTeX 中間產物（防止根目錄汙染）──
+*.aux
+*.bbl
+*.blg
+*.bcf          # biblatex
+*.fdb_latexmk
+*.fls
+*.log
+*.out          # hyperref
+*.run.xml      # biblatex
+*.synctex.gz
+*.toc
+
+# ── 最終 PDF（由 CI 發布，不進 git）──
+*.pdf
