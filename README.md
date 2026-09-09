@@ -47,7 +47,8 @@
 | GitHub Desktop | 圖形化 Git 操作 | https://desktop.github.com |
 | VS Code | 文字編輯器 | https://code.visualstudio.com |
 | VS Code 擴充：LaTeX Workshop | 即時預覽 LaTeX | VS Code 內搜尋安裝 |
-| MiKTeX（含 XeLaTeX） | 本地編譯引擎 | https://miktex.org |
+| MiKTeX（Windows） | 本地編譯引擎(for Windows) | https://miktex.org |
+| MacTeX (macOS) | 本地編譯引擎(for macOS) | https://www.tug.org/mactex/mactex-download.html |
 
 ### 2. Clone 專案到本地
 
